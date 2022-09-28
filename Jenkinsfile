@@ -9,18 +9,18 @@ pipeline {
                 sh './script/ansible.sh'
             }
         }
-        stage('Install packages and dependencies using Ansible'){
+        stage('Install docker and kubectl using Ansible'){
             steps{
-                sh 'cd ansible && ansible-playbook -i inventory.yaml playbook.yaml'
+                sh 'cd ansible && ansible-playbook playbook.yaml'
             }
         }
-        stage('Run Test for Frontend and Backend'){
+        stage('Run Test for Frontend'){
             steps{
                 sh 'sudo chmod +x ./script/test.sh'
                 sh './script/test.sh'
             }
         }
-        stage('Build Docker Images using Docker Compose'){
+        stage('Build Docker Images'){
             steps{
                 sh 'sudo chmod +x ./script/build.sh'
                 sh './script/build.sh'
