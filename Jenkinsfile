@@ -3,7 +3,13 @@ pipeline {
      environment{
     }
     stages{
-        stage('Install packages and dependencies'){
+        stage('Install Ansible'){
+            steps{
+                sh 'sudo chmod +x ./script/ansible.sh'
+                sh './script/ansible.sh'
+            }
+        }
+        stage('Install packages and dependencies using Ansible'){
             steps{
                 sh 'cd ansible && ansible-playbook -i inventory.yaml playbook.yaml'
             }
