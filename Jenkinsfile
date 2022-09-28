@@ -9,7 +9,7 @@ pipeline {
                 sh './script/ansible.sh'
             }
         }
-        stage('Install docker and kubectl using Ansible'){
+        stage('Install updates, docker and kubectl using Ansible'){
             steps{
                 sh 'cd ansible && ansible-playbook playbook.yaml'
             }
