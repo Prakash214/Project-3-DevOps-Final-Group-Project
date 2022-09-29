@@ -1,0 +1,5 @@
+---
+# tasks file for docker-compose-build
+- name: docker-compose-build 
+  shell: |
+   docker-compose build 

@@ -1,0 +1,11 @@
+---
+# tasks file for update-apt
+
+- name: "update apt packages"
+  apt:
+    upgrade: yes
+    update_cache: yes
+
+- name: "install unzip"
+  shell: | 
+   sudo apt install -y unzip
