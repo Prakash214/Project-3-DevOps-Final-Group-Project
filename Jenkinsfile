@@ -1,6 +1,8 @@
 pipeline {
     agent any
      environment{
+        DOCKER_USERNAME=credentials('DOCKER_USERNAME')
+        DOCKER_PASSWORD=credentials('DOCKER_PASSWORD')
     }
     stages{
         stage('Install Ansible'){
@@ -9,9 +11,9 @@ pipeline {
                 sh './script/ansible.sh'
             }
         }
-        stage('Install updates, docker and kubectl using Ansible'){
+        stage('Install updates, aws cli, kubectl using Ansible'){
             steps{
-                sh 'cd ansible && ansible-playbook playbook.yaml'
+                sh 'cd ansible && ansible-playbook playbook-initial.yaml'
             }
         }
         stage('Run Test for Frontend'){
@@ -20,10 +22,9 @@ pipeline {
                 sh './script/test.sh'
             }
         }
-        stage('Build Docker Images'){
+        stage('Install docker, build docker images and clean docker images'){
             steps{
-                sh 'sudo chmod +x ./script/build.sh'
-                sh './script/build.sh'
+                sh 'cd ansible && ansible-playbook playbook-docker.yaml -e USERNAME=${DOCKER_USERNAME} -e PASSWORD=${DOCKER_PASSWORD}'
             }
         }
         stage('Kubernetes'){
