@@ -1,6 +1,5 @@
 #! /bin/bash
-# Install chrome driver and make it env variable
-sudo apt-get install -y chromium-browser
+# make chrome browser an env variable for test
 export CHROME_BIN=/usr/bin/chromium-browser
 
 # install nodejs version 12
