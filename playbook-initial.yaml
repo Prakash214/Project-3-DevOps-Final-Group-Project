@@ -2,7 +2,7 @@
 - hosts: localhost
   become: true 
   roles:
-  - update-apt
-  - angular-install
+  - initial-stage
   - awscli-install
   - kubectl-install
+  - chromium-browser

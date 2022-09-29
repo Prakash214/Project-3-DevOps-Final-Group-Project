@@ -1,7 +1,0 @@
----
-# tasks file for angular-install
-- name: "angular install"
-  shell: |
-    sudo apt update
-    sudo apt install npm -y
-    npm install -g @angular/cli@11.2.x
