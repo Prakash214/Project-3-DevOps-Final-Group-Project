@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./frontend/spring-petclinic-angular
+    image: anassumrani/frontend:latest
+    ports:
+    - target: 4200
+      published: 4200
+      protocol: tcp
+    depends_on: 
+    - "backend"
+  backend:
+    build: ./backend/spring-petclinic-rest
+    image: anassumrani/backend:latest
+    ports:
+    - target: 9966
+      published: 9966
+      protocol: tcp
