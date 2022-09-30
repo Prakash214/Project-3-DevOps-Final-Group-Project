@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: true 
+  roles:
+  - update-apt
+  - angular-install
+  - awscli-install
+  - kubectl-install

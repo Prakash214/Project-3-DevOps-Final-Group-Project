@@ -1,0 +1,5 @@
+---
+# tasks file for awscli-install
+- name: "install aws-cli"
+  shell: |
+   ansible-galaxy install ansiblebit.awscli
