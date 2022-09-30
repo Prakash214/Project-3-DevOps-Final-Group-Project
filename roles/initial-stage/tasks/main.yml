@@ -7,8 +7,9 @@
     update_cache: yes
     
 
-- name: "install unzip and wget"
+- name: "install unzip, wget and maven"
   apt:
     pkg: 
     - unzip
     - wget
+    - maven
