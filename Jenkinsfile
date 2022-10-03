@@ -3,6 +3,8 @@ pipeline {
      environment{
         DOCKER_USERNAME=credentials('DOCKER_USERNAME')
         DOCKER_PASSWORD=credentials('DOCKER_PASSWORD')
+        AWS_ACCESS_KEY=credentials('AWS_ACCESS_KEY')
+        AWS_SECRET_KEY=credentials('AWS_SECRET_KEY')
     }
     stages{
         stage('Install Ansible'){
