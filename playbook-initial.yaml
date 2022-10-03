@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: true 
+  roles:
+  - initial-stage
+  - awscli-install
+  - kubectl-install
+  - chromium-browser

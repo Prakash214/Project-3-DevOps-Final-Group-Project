@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: true 
+  roles:
+  - docker-install
+  - docker-compose
+  - docker-compose-build
+  - docker-push  
+  - docker-clean

@@ -1,0 +1,8 @@
+---
+# tasks file for angular-install
+- name: "install chromium browser and chrome driver"
+  shell: |
+    sudo apt-get install -y chromium-browser
+    wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+    unzip chromedriver_linux64.zip
+    rm chromedriver_linux64.zip

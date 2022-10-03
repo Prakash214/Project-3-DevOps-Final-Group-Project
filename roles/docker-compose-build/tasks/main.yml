@@ -1,0 +1,10 @@
+---
+# tasks file for docker-compose-build
+- name: docker-build-backend
+  shell: |
+   cd backend && cd spring-petclinic-rest && mvn compile jib:build -X -DjibSerialize=true -Djib.to.auth.username={{DOCKER_USERNAME}} -Djib.to.auth.password={{DOCKER_PASSWORD}}
+#- name: docker-compose-build 
+ # shell: |
+  # docker-compose build 
+
+
