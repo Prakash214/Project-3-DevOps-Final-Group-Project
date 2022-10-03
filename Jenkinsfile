@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Install updates, aws cli, kubectl using Ansible'){
             steps{
-                sh 'cd ansible && ansible-playbook playbook-initial.yaml'
+                sh 'ansible-playbook playbook-initial.yaml'
             }
         }
         stage('Run Test for Frontend'){
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Install docker, build docker images and clean docker images using Ansible'){
             steps{
-                sh 'cd ansible && ansible-playbook playbook-docker.yaml -e USERNAME=${DOCKER_USERNAME} -e PASSWORD=${DOCKER_PASSWORD}'
+                sh 'ansible-playbook playbook-docker.yaml -e USERNAME=${DOCKER_USERNAME} -e PASSWORD=${DOCKER_PASSWORD}'
             }
         }
         stage('Configure AWS'){
