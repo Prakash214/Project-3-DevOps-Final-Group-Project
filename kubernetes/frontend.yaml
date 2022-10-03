@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: anaasumrani/frontend:latest
+        image: anassumrani/frontend:latest
         ports:
         - containerPort: 4200
        

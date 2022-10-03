@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: anaasumrani/backend:latest
+        image: anassumrani/backend:latest
         ports:
         - containerPort: 9966
        
