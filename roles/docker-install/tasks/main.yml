@@ -1,7 +1,4 @@
 ---
-- name: uninstall python 2 
-  shell: |
-   sudo apt purge -y python2.7-minimal
 
 - name: "install python3 and python pip"
   apt:
@@ -10,6 +7,12 @@
     - python3-pip
     state: latest
     update_cache: true
+
+- name: uninstall python 2 
+  shell: |
+   sudo apt purge -y python2.7-minimal
+   sudo ln -s /usr/bin/python3 /usr/bin/python
+   sudo ln -s /usr/bin/pip3 /usr/bin/pip
 
 - name: "Install required packages"
   apt:
