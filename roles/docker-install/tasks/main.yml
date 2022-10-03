@@ -29,7 +29,7 @@
     update_cache: true
 
 - name: "Docker pip installs"
-  pip:
+  pip3:
     name:
       - docker
       - jsondiff
