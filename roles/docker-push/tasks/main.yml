@@ -1,7 +1,7 @@
 ---
 # tasks file for docker-push
 
-- name: "Push Images to Docker"
+- name: "Docker login"
   shell: docker login --username {{USERNAME}} --password {{PASSWORD}}
 
 - name: "Push Images to Docker"
