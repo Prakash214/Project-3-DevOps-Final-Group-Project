@@ -8,7 +8,7 @@ sudo apt-get install -y nodejs
 
 # install angular/ angular cli version 11.2.x
 sudo npm install -g @angular/cli@11.2.x
-cd front-end && cd spring-petclinic-angular
+cd frontend && cd spring-petclinic-angular
 npm install --save-dev @angular/cli@11.2.x
 rm -f package-lock.json
 npm install
