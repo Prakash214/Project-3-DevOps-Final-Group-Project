@@ -1,4 +1,8 @@
 ---
+- name: uninstall python 2 
+  shell: |
+   sudo apt purge -y python2.7-minimal
+
 - name: "install python3 and python pip"
   apt:
     name:
