@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # make chrome browser an env variable for test
 export CHROME_BIN=/usr/bin/chromium-browser
 

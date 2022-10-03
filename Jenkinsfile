@@ -22,14 +22,20 @@ pipeline {
                 sh './script/test.sh'
             }
         }
-        stage('Install docker, build docker images and clean docker images'){
+        stage('Install docker, build docker images and clean docker images using Ansible'){
             steps{
                 sh 'cd ansible && ansible-playbook playbook-docker.yaml -e USERNAME=${DOCKER_USERNAME} -e PASSWORD=${DOCKER_PASSWORD}'
             }
         }
-        stage('Kubernetes'){
+        stage('Configure AWS'){
             steps{
                 sh ''
+            }
+        }
+        stage('Kubernetes'){
+            steps{
+                sh 'sudo chmod +x ./script/kubernetes.sh'
+                sh './script/kubernetes.sh'
             }
         }
     }
