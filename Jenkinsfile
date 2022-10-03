@@ -31,7 +31,11 @@ pipeline {
         }
         stage('Configure AWS'){
             steps{
-                sh ''
+                sh '''
+                    aws configure set aws_access_key_id ${AWS_ACCESS_KEY}; \
+                    aws configure set aws_secret_access_key ${AWS_SECRET_KEY}; \ 
+                    aws configure set default.region eu-west-2
+                '''
             }
         }
         stage('Kubernetes'){
