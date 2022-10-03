@@ -28,8 +28,14 @@
     state: latest
     update_cache: true
 
+- name: "Install and upgrade pip"
+  pip:    
+    name: pip   
+    extra_args: --upgrade  
+    executable: pip3
+
 - name: "Docker pip installs"
-  pip3:
+  pip:
     name:
       - docker
       - jsondiff
