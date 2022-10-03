@@ -36,7 +36,7 @@ pipeline {
         }
         stage('Kubernetes'){
             steps{
-                sh 'aws eks --region eu-west-2 update-kubconfig --name DemoCluster' 
+                sh 'aws eks --region eu-west-2 update-kubeconfig --name DemoCluster' 
                 sh 'sudo chmod +x ./script/kubernetes.sh'
                 sh './script/kubernetes.sh'
             }
