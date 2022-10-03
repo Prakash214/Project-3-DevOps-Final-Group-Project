@@ -1,9 +1,8 @@
 ---
 # tasks file for docker-push
-- name: "Login to DockerHub"
-  docker_login:
-    username: "{{USERNAME}}"
-    password: "{{PASSWORD}}"
+
+- name: "Push Images to Docker"
+  shell: docker login --username {{USERNAME}} --password {{PASSWORD}}
 
 - name: "Push Images to Docker"
   shell: docker-compose push
