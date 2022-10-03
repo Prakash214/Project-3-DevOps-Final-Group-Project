@@ -1,5 +1,17 @@
 ---
-# tasks file for awscli-install
-- name: "install aws-cli"
+- name: check if aws is installed
   shell: |
-   ansible-galaxy install ansiblebit.awscli
+    aws --version || true
+  register: aws_installed
+  ignore_errors: yes
+
+- name: check output of aws_installed
+  debug:
+    msg: "{{ aws_installed }}"
+
+- name: install aws-cli
+  shell: |
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+  when: "'aws' not in aws_installed.stdout"
