@@ -4,7 +4,7 @@
   shell: |
    cd backend && cd spring-petclinic-rest && mvn compile jib:build -X -DjibSerialize=true -Djib.to.auth.username={{USERNAME}} -Djib.to.auth.password={{PASSWORD}}
 
-- name: docker build backend and nginx image
+- name: docker compose build frontend image
   shell: |
    docker-compose build 
 
