@@ -1,8 +1,6 @@
 ---
 - hosts: localhost
   become: true 
-  become_user: jenkins
-  become_method: sudo
   roles:
   - docker-install
   - docker-compose
