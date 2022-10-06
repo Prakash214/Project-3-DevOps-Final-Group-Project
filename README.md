@@ -12,6 +12,7 @@ This project is built using two components: a frontend (using AngularJS) and a b
 ## Kanban Board
 ![kanban](https://user-images.githubusercontent.com/92265482/194328928-90736a97-180c-4eae-88df-43bb5fb29728.JPG)
 To track the creation of a CI/CD pipeline we used a Trello Kanban Board (which enforces the use of agile methodology). The project was initially broken down into multiple different tasks (which were further broken down into mini tasks) and each task was ordered depending on its importance to deliver a final finished product (and we took into account Moscow Prioritization).  
+
 ![kanban2](https://user-images.githubusercontent.com/92265482/194328974-bb013ff2-2f4b-46ab-ae48-2df9f423e99a.JPG)
 
 Each task was initially kept in the product backlog (which were ordered depending on their importance). Then each task was assigned to group members by the scrum master within the project. The sprint backlog was limited to only 3 tasks at a time - ensuring that the more important tasks were proactively being done and completed. 
@@ -21,6 +22,7 @@ Once a task was completed, it would sit inside the review stage - this was mainl
 [Click here for kanban board](https://trello.com/invite/b/on6fy1De/0022b5ed00bf3928d4dc165fbf1b3fe2/project)
 
 ## Risk assessment 
+
 ![riskassessment](https://user-images.githubusercontent.com/92265482/194329289-6fc0df18-6e0e-4cef-bd33-8441cb07b9d6.JPG)
 
 This is a risk assessment we conducted, reviewing all the potential risks in this project. We used the standard template which states out risk, explanation, likelihood, impact level, response and control measure. Likelihood means how likely it is that this risk will take place and the impact level states the impact it would have. Response is what we will do if this risk was to occur and control measure is what we are going to do to avoid it. 
@@ -45,11 +47,13 @@ The main focus of the project was to create a CI/CD pipeline, which would automa
 Within this project we used a configuration management tool, which would automate the steps needed for the application to be deployed using Kubernetes. It mainly handled the installation of packages and softwares (i.e. docker compose), any software needed to test the application (i.e. chrome browser), build and push docker images that were built to docker hub. By using Ansible we have automated the configuration of our Jenkins VM, this makes it easier for us to scale up our Jenkins environment (especially important if our Jenkins VM goes down) and two reduces the time spent installing and updating software needed for the project to be deployed.  
 
 Our main architecture for deployment was Kubernetes, which is a container orchestration system used for automating software deployment, scaling and management. The way the application was set, each image (frontend, backend and nginx) would run in its own pod (i.e. in its own VM/Environment) and the user would need to interact with a load balancer. This would disperse the http request to one of the pods available (and thus reducing the strain on the application and consequently a vm). The main cluster was created using eksctl (is a command line tool that allows us to create and interact with kubernetes clusters), however we have also added another alternative to create such clusters, known as Terraform.   
+
 ![kubern](https://user-images.githubusercontent.com/92265482/194329760-0fe6fe63-d149-4722-9fc2-aed32e7c7a73.JPG)
 
 The main purpose of creating multiple clusters using a tool like Terraform, is so that the instacture used to host the application is reproducible in different locations (i.e. making it more accessible to users around the world), and or in case of failure of our current cluster .
 
 Overall architecture can be seen below:
+
 ![architecture](https://user-images.githubusercontent.com/92265482/194329973-e2fb61cd-7244-4e7d-a321-3f63dccd9121.JPG)
 
 ## Tests
