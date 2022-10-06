@@ -1,6 +1,6 @@
 ---
 
-- name: "install python3 and python pip"
+- name: "Install python3 and python pip"
   apt:
     name:
     - python3
@@ -8,7 +8,7 @@
     state: latest
     update_cache: true
 
-- name: use python 3
+- name: Use python 3
   shell: |
     sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
