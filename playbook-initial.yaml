@@ -3,6 +3,6 @@
   become: true 
   roles:
   - initial-stage
-  - awscli-install
+  - awscli-eksctl-install
   - kubectl-install
   - chromium-browser
