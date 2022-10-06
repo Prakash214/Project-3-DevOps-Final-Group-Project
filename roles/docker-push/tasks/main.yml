@@ -1,6 +1,5 @@
 ---
 # tasks file for docker-push
-
 - name: "Docker login"
   shell: docker login --username {{USERNAME}} --password {{PASSWORD}}
 

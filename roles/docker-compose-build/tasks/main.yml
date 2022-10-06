@@ -1,10 +1,10 @@
 ---
 # tasks file for docker-compose-build
-- name: google jib docker backend image
+- name: Google jib docker backend image
   shell: |
    cd backend && cd spring-petclinic-rest && mvn compile jib:build -X -DjibSerialize=true -Djib.to.auth.username={{USERNAME}} -Djib.to.auth.password={{PASSWORD}}
 
-- name: docker compose build frontend image
+- name: Docker compose build frontend image
   shell: |
    docker-compose build 
 
